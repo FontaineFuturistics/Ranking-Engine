@@ -24,6 +24,8 @@ class RankList:
         c_tuple = self.compare_list.pop()
 
         # TODO actually compare the items
+        print(f"0={c_tuple[0]} || 1={c_tuple[1]}")
+        ui = int(input("enter choice: "))
 
 # A Single item being ranked, internal to the RankList class
 class RankItem:
@@ -42,5 +44,27 @@ class RankItem:
         self.lower_items = []
 
     # Add higher item
-    def add_higher(self, other: RankItem) -> None:
+    def add_higher(self, other: "RankItem") -> None:
         
+        # Add to our higher list if we don't already have it
+        if other not in self.higher_items:
+            self.higher_items.append(other)
+
+        # Do the same for each of our lower items
+        for item in self.lower_items:
+            item.add_higher(other)
+
+        return
+
+    # Add lower item
+    def add_lower(self, other: "RankItem") -> None:
+        
+        # Add to our lower list if we don't already have it
+        if other not in self.lower_items:
+            self.lower_items.append(other)
+
+        # Do the same for each of our higher items
+        for item in self.higher_items:
+            item.add_lower(other)
+
+        return
