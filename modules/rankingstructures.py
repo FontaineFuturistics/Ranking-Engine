@@ -25,7 +25,21 @@ class RankList:
 
         # TODO actually compare the items
         print(f"0={c_tuple[0]} || 1={c_tuple[1]}")
-        ui = int(input("enter choice: "))
+        higher = int(input("enter choice: "))
+
+        # Apply comparison
+        if higher == 0:
+            c_tuple[0].add_lower # TODO
+
+    # Find any items whose comparisons are invalid and add them to the compare list
+    def find_invalid(self) -> None:
+
+        for ri in self.source_list:
+            for ori in ri.lower_items:
+                if ori in ri.higher_items:
+                    self.compare_list.append([ri, ori])
+
+# TODO use external class for the comparison and call it to decide what to compare, when to compare, and how to compare, this is just backend that won't change
 
 # A Single item being ranked, internal to the RankList class
 class RankItem:
@@ -43,7 +57,7 @@ class RankItem:
         # All items compared to be lower than us
         self.lower_items = []
 
-    # Add higher item
+    # Add higher item, cascading
     def add_higher(self, other: "RankItem") -> None:
         
         # Add to our higher list if we don't already have it
@@ -56,7 +70,7 @@ class RankItem:
 
         return
 
-    # Add lower item
+    # Add lower item, cascading
     def add_lower(self, other: "RankItem") -> None:
         
         # Add to our lower list if we don't already have it
@@ -68,3 +82,11 @@ class RankItem:
             item.add_lower(other)
 
         return
+    
+    # Remove lower item, no cascading
+    def rem_lower(self, other: "RankItem") -> None:
+        return # TODO
+
+    # Remove higher item, no cascading
+    def rem_higher(self, other: "RankItem") -> None:
+        return # TODO
