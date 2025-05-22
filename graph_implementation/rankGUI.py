@@ -40,6 +40,9 @@ class RankUI:
         self.save_button = tk.Button(self.action_frame, text="Save Graph Data", command=self.save_graph)
         self.save_button.pack(side="left", padx=5)
 
+        self.add_node_button = tk.Button(self.action_frame, text="Add Node", command=self.add_node)
+        self.add_node_button.pack(side="left", padx=5)
+
         self.exit_button = tk.Button(self.action_frame, text="Exit", command=self.root.quit)
         self.exit_button.pack(side="left", padx=5)
 
@@ -130,6 +133,23 @@ class RankUI:
         self.output_text.delete(1.0, tk.END)
         self.output_text.insert(tk.END, text)
         self.output_text.config(state="disabled")
+
+    def add_node(self):
+        node_name = simpledialog.askstring("Add Node", "Enter the name of the new node:")
+        if node_name:
+            # Check if node already exists
+            if any(node.name == node_name for node in self.graph.nodes):
+                messagebox.showwarning("Warning", f"Node '{node_name}' already exists.")
+                return
+            try:
+                # Create a new RankNode and add it to the graph
+                from rank_graph import RankNode
+                new_node = RankNode(node_name)
+                self.graph.add_node(new_node)
+                messagebox.showinfo("Success", f"Node '{node_name}' added.")
+                self.update_edge_count()
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to add node: {e}")
 
 def main():
     graph = rank_graph.RankGraph("/Users/liame/Documents/GitHub/Ranking-Engine/graph_implementation/data/realdata.json")
