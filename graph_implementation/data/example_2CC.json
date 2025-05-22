@@ -1,0 +1,8 @@
+{
+    "Upcoming1": ["Upcoming2"],
+    "Upcoming2": ["Upcoming1"],
+    "Modern1": ["Upcoming1", "Upcoming2"],
+    "Old1": ["Modern1"],
+    "disc1": ["disc2"],
+    "disc2": []
+}

@@ -1,0 +1,59 @@
+RankNode
+    - Name
+
+RankGraph
+    + The graph is an adjacency list, where each node has a list of all items better than it
+    - Constructor()
+        + accepts a node file
+    - Nodes
+        + List of RankNode objects
+    - AdjacencyList
+        + Adjacency list from node.name to a list of nodes
+    - addNode()
+        + Add a node
+    - addEdge()
+        + adds an edge
+    - ConnectedComponents()
+        + Returns a list of connected components
+        + Use DFS to find connected components, without respect to direction
+            + This will use getDirectNeighbors in the DFS algorithm
+        + Return a 2d array[x][y]
+            + [x] is each connected component
+            + [y] is the nodes in that component
+    - canMakeList()
+        + Return whether a list can be made
+        + For this to work, all items must be in a single connected component
+        + Run ConnectedComponents() and check if there is only 1 CC
+    - makeList()
+        + Make the list based on self.nodes
+        + Check that a list can be made with canMakeList()
+        + Top of the list is the item with the least indirect neighbors, etc.
+        + Will need to run getIndirectNieghbors() on each node to find how many indirect neighbors it has, then sort
+        + Return a list
+    - nextNodes()
+        + Find the next two nodes to compare
+        + If there are multiple connected components, the next two should be node0 of CC1 and node0 of CC2
+        + If there are not, find the node with the least edges (to or from) and compare it with an uncompared node
+        + Return a tuple of nodes
+    - getDirectNeighbors()
+        + Get all neighbors of a node (ignoring direction)
+        + Look at a nodes neighbors in the adjacency list
+        + Look through all other entries in the adjacency list and check for this node
+        + Return a list of nodes
+    - getIndirectNeighbors()
+        + use dfs to get all indirect neighbors
+        + This effectively returns all nodes better than this node
+        + Return a list of nodes
+    
+RankUI
+    - Constructor()
+        + accepts a RankGraph
+    - CompareNodes()
+        + Compare two nodes
+    - MakeValid()
+        + Keep iterating until canMakeList() is true
+        + Compare the next two nodes
+    - CompareNext()
+        + Find the next node to compare
+    - PrintList()
+        + Make and print the comparison list
