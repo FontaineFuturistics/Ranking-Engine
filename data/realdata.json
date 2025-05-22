@@ -1,13 +1,13 @@
 {
     "Judas": [
-        "Little Nighmares III",
+        "Little Nightmares III",
         "Ark 2"
     ],
     "Critter Crosser": [
         "Judas",
         "Ark 2"
     ],
-    "Little Nighmares III": [
+    "Little Nightmares III": [
         "Critter Crosser",
         "Ark 2"
     ],
@@ -15,29 +15,35 @@
     "Lay of the Land": [
         "Judas",
         "Critter Crosser",
-        "Little Nighmares III"
+        "Little Nightmares III",
+        "Ark 2"
     ],
     "Plunder": [
         "Judas",
         "Critter Crosser",
-        "Little Nighmares III"
+        "Little Nightmares III"
     ],
     "Life is Strange: Double Exposure": [
         "Judas",
         "Critter Crosser",
-        "Little Nighmares III",
+        "Little Nightmares III",
         "Ark 2",
-        "Plunder"
+        "Plunder",
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Clair Obscur: Expedition 33"
     ],
     "Besiege: The Splintered Sea": [
         "Judas",
         "Critter Crosser",
         "Plunder",
-        "The Outer Worlds"
+        "The Outer Worlds",
+        "Lay of the Land",
+        "Coromon"
     ],
     "The Last of Us Part II Remastered": [
         "Judas",
-        "Critter Crosser"
+        "Critter Crosser",
+        "The Outer Worlds"
     ],
     "The Elder Scrolls IV: Oblivion Remastered": [
         "Judas",
@@ -47,7 +53,8 @@
     "Horizon Zero Dawn Remastered": [
         "Judas",
         "Critter Crosser",
-        "The Outer Worlds"
+        "The Outer Worlds",
+        "Little Nightmares III"
     ],
     "The Outer Worlds": [
         "Judas",
@@ -57,7 +64,8 @@
     "Warhammer 40k: Space Marine 2": [
         "Judas",
         "Critter Crosser",
-        "Blade and Sorcery"
+        "Blade and Sorcery",
+        "Little Nightmares III"
     ],
     "Factorio": [
         "Judas",
@@ -66,7 +74,8 @@
     ],
     "Timberborn": [
         "Judas",
-        "Critter Crosser"
+        "Critter Crosser",
+        "Factorio"
     ],
     "Far Cry Primal": [
         "Judas",
@@ -79,24 +88,27 @@
         "Critter Crosser",
         "Timberborn",
         "Selaco",
-        "Little Nighmares III"
+        "Little Nightmares III"
     ],
     "Selaco": [
         "Judas",
         "Critter Crosser",
         "Blade and Sorcery",
-        "The Walking Dead: Saints & Sinners"
+        "The Walking Dead: Saints & Sinners",
+        "Ark 2"
     ],
     "BattleBit Remastered": [
         "Judas",
         "Critter Crosser",
-        "Horizon Zero Dawn Remastered"
+        "Horizon Zero Dawn Remastered",
+        "Life is Strange: Double Exposure"
     ],
     "Sid Meier's Civilization VII": [
         "Judas",
         "Critter Crosser",
         "Far Cry Primal",
-        "Lay of the Land"
+        "Lay of the Land",
+        "Blade and Sorcery"
     ],
     "The Walking Dead: Saints & Sinners": [
         "Judas",
@@ -108,7 +120,9 @@
         "Critter Crosser",
         "Timberborn",
         "Plunder",
-        "The Last of Us Part II Remastered"
+        "The Last of Us Part II Remastered",
+        "The Elder Scrolls IV: Oblivion Remastered",
+        "Clair Obscur: Expedition 33"
     ],
     "Warhammer 40k: Boltgun": [
         "Judas",
@@ -116,45 +130,59 @@
         "Warhammer 40k: Space Marine 2",
         "Timberborn",
         "Lay of the Land",
-        "Horizon Zero Dawn Remastered"
+        "Horizon Zero Dawn Remastered",
+        "Far Cry Primal"
     ],
     "Zombie Army 4: Dead War": [
         "Judas",
         "Critter Crosser",
         "Horizon Zero Dawn Remastered",
         "BattleBit Remastered",
-        "Blade and Sorcery"
+        "Blade and Sorcery",
+        "The Outer Worlds",
+        "The Last of Us Part II Remastered",
+        "Clair Obscur: Expedition 33"
     ],
     "Foundation": [
         "Judas",
         "Critter Crosser",
         "Warhammer 40k: Space Marine 2",
         "Warhammer 40k: Boltgun",
-        "Little Nighmares III"
+        "Little Nightmares III",
+        "The Elder Scrolls IV: Oblivion Remastered"
     ],
     "RailGods of Hysterra": [
         "Judas",
         "Critter Crosser",
         "Sid Meier's Civilization VII",
         "The Last of Us Part II Remastered",
-        "Besiege: The Splintered Sea"
+        "Besiege: The Splintered Sea",
+        "Far Cry Primal",
+        "Plunder"
     ],
     "What Remains of Edith Finch": [
         "Judas",
         "Critter Crosser",
         "The Walking Dead: Saints & Sinners",
         "The Elder Scrolls IV: Oblivion Remastered",
-        "Factorio"
+        "Factorio",
+        "Sid Meier's Civilization VII",
+        "Clair Obscur: Expedition 33"
     ],
     "Airborne Empire": [
         "Judas",
         "Critter Crosser",
-        "Little Nighmares III",
+        "Little Nightmares III",
         "BattleBit Remastered",
-        "Void Crew"
+        "Void Crew",
+        "The Walking Dead: Saints & Sinners"
     ],
     "Blade and Sorcery": [
         "Judas",
         "Critter Crosser"
+    ],
+    "Clair Obscur: Expedition 33": [
+        "Judas",
+        "The Elder Scrolls IV: Oblivion Remastered"
     ]
 }
