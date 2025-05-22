@@ -1,4 +1,5 @@
 import json
+import random # To shuffle the nodes
 
 class RankNode:
     def __init__(self, name: str):
@@ -72,8 +73,8 @@ class RankGraph:
         Get all neighbors of a node in an undirected manner, i.e., both directions.
         """
 
-        # Start by loading our outbound neig
-        neighbors = self.adjacency_list[node.name]
+        # Outbound neighbors (make a copy to avoid modifying the original list)
+        neighbors = list(self.adjacency_list[node.name])
         # Then add all inbound neighbors
         for n in self.nodes:
             if node in self.adjacency_list[n.name]:
@@ -83,16 +84,16 @@ class RankGraph:
     
     def get_indirect_neighbors(self, node: RankNode):
         """
-        Get all indirect neighbors of a node.
+        Get all indirect neighbors of a node, includes self to avoid cycles getting an extra node.
         """
-        visited = set() # We don't need this, we could just use indirect_neighbors, but this is cleaner
+        
+        # Make the list of indirect neighbors
         indirect_neighbors = []
 
         def dfs(current_node):
-            visited.add(current_node.name)
-            for neighbor in self.get_undirected_neighbors(current_node):
-                if neighbor.name not in visited:
-                    indirect_neighbors.append(neighbor)
+            indirect_neighbors.append(current_node)
+            for neighbor in self.adjacency_list[current_node.name]:
+                if neighbor not in indirect_neighbors:
                     dfs(neighbor)
 
         dfs(node)
@@ -161,48 +162,37 @@ class RankGraph:
             # Get the node with the least undirected neighbors
             min_node = min(self.nodes, key=lambda x: len(self.get_undirected_neighbors(x)))
             # Get a node it has not been compared with
-            for node in self.nodes:
+            shuffled_nodes = list(self.nodes)
+            random.shuffle(shuffled_nodes)
+            for node in shuffled_nodes:
                 if node.name != min_node.name and node not in self.get_undirected_neighbors(min_node):
                     return min_node, node
             # If all nodes have been compared, return None
             return None, None
+        
+    def get_edge_count(self):
+        """
+        Get the number of edges in the graph.
+        """
+        count = 0
+        for node in self.nodes:
+            count += len(self.adjacency_list[node.name])
+        return count
+
+    def save(self, file_path: str):
+        """
+        Save the graph to a json file.
+        """
+        data = {}
+        for node in self.nodes:
+            data[node.name] = [neighbor.name for neighbor in self.adjacency_list[node.name]]
+        with open(file_path, 'w') as file:
+            json.dump(data, file, indent=4)
 
 if __name__ == "__main__":
-    def print_list(lst):
-        def lst_to_str(lst) -> str:
-            output = "["
-            for item in lst:
-                # If the item is a list, call this function recursively
-                if isinstance(item, list):
-                    output += lst_to_str(item) + ", "
-                else:
-                    output += str(item) + ", "
-            
-            # Remove the last comma and space
-            if len(output) > 1:
-                output = output[:-2] + "]"
-
-            return output
-        print(lst_to_str(lst))
-            
-    # Example usage
-    graph = RankGraph("./data/example_1CC.json")
-    #graph.print_graph()
-    """components = graph.get_connected_components()
-    print("Connected components (fancy):")
-    for component in components:
-        print([node.name for node in component])
-
-    print("Connected components (raw):")
-    print_list(components)"""
-
-    """print("Can make list:", graph.can_make_list())
-    if graph.can_make_list():
-        sorted_list = graph.make_list()
-        print("Sorted list:")
-        print([node.name for node in sorted_list])
-    else:
-        print("Graph cannot be made into a list")"""
     
-    print("Next nodes to compare:")
-    print(graph.next_nodes())
+    import misc
+
+    graph = RankGraph("./data/example_1CC.json")
+
+    graph.next_nodes()

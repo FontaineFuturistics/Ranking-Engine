@@ -1,0 +1,26 @@
+{
+    "Upcoming1": [
+        "Upcoming2",
+        "Old1"
+    ],
+    "Upcoming2": [
+        "Upcoming1",
+        "Old1",
+        "disc1"
+    ],
+    "Modern1": [
+        "Upcoming1",
+        "Upcoming2"
+    ],
+    "Old1": [
+        "Modern1"
+    ],
+    "disc1": [
+        "disc2",
+        "Upcoming1"
+    ],
+    "disc2": [
+        "Upcoming1",
+        "Upcoming2"
+    ]
+}
