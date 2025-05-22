@@ -65,6 +65,9 @@ class RankUI:
         self.add_node_button = tk.Button(self.action_frame, text="Add Node", command=self.add_node)
         self.add_node_button.pack(side="left", padx=5)
 
+        self.add_edge_button = tk.Button(self.action_frame, text="Add Edge", command=self.add_edge)
+        self.add_edge_button.pack(side="left", padx=5)
+
         self.exit_button = tk.Button(self.action_frame, text="Exit", command=self.root.quit)
         self.exit_button.pack(side="left", padx=5)
 
@@ -172,6 +175,30 @@ class RankUI:
                 self.update_edge_count()
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to add node: {e}")
+
+    def add_edge(self):
+        # Prompt user for source and target node names
+        node_names = [node.name for node in self.graph.nodes]
+        node1 = simpledialog.askstring("Add Edge", f"Enter the name of the lower item:")
+        if not node1 or node1 not in node_names:
+            messagebox.showerror("Error", "Invalid or missing source node name.")
+            return
+        node2 = simpledialog.askstring("Add Edge", f"Enter the name of the higher item:")
+        if not node2 or node2 not in node_names:
+            messagebox.showerror("Error", "Invalid or missing target node name.")
+            return
+        if node1 == node2:
+            messagebox.showerror("Error", "Cannot add an edge from a node to itself.")
+            return
+        # Add the edge
+        try:
+            node_obj1 = next(node for node in self.graph.nodes if node.name == node1)
+            node_obj2 = next(node for node in self.graph.nodes if node.name == node2)
+            self.graph.add_edge(node_obj1, node_obj2)
+            messagebox.showinfo("Success", f"Edge added: {node1} -> {node2}")
+            self.update_edge_count()
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to add edge: {e}")
 
 def main():
     root = tk.Tk()

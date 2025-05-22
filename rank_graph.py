@@ -51,6 +51,10 @@ class RankGraph:
         if isinstance(to_node, str):
             to_node = self.get_node(to_node)
 
+        # If the edge already exists, do nothing
+        if from_node and to_node and to_node in self.adjacency_list[from_node.name]:
+            return
+
         # Now that we have RankNode objects, we can add the edge
         if from_node and to_node:
             self.adjacency_list[from_node.name].append(to_node)
