@@ -2,12 +2,34 @@ import rank_graph
 import misc
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog, scrolledtext
+import os
 
 class RankUI:
     def __init__(self, graph: "rank_graph.RankGraph"):
         self.graph = graph
         self.root = tk.Tk()
         self.root.title("Ranking Engine")
+
+        # Logo
+        # Set icon for both window and taskbar
+        icon_path = os.path.join(os.path.dirname(__file__), "logo.ico")
+        png_icon_path = os.path.join(os.path.dirname(__file__), "logo.png")
+        try:
+            self.root.iconbitmap(icon_path)
+        except Exception:
+            print("logo.ico not found or not supported, using default icon.")
+
+        try:
+            logo_img = tk.PhotoImage(file=png_icon_path)
+            self.root.iconphoto(True, logo_img)
+        except Exception:
+            print("logo.png not found or not supported for iconphoto.")
+
+        # Bring window to the foreground
+        self.root.lift()
+        self.root.attributes('-topmost', True)
+        self.root.after(0, lambda: self.root.attributes('-topmost', False))
+
         self.create_widgets()
         self.update_edge_count()
         self.next_nodes = None
@@ -152,8 +174,18 @@ class RankUI:
                 messagebox.showerror("Error", f"Failed to add node: {e}")
 
 def main():
-    graph = rank_graph.RankGraph("/Users/liame/Documents/GitHub/Ranking-Engine/graph_implementation/data/realdata.json")
-    #graph = rank_graph.RankGraph("./data/example_2CC.json")
+    root = tk.Tk()
+    root.withdraw()  # Hide the root window while selecting file
+    input_path = filedialog.askopenfilename(
+        title="Select input graph data file",
+        filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+    )
+    if not input_path:
+        messagebox.showerror("Error", "No input file selected. Exiting.")
+        return
+    root.destroy()  # Close the hidden root window
+
+    graph = rank_graph.RankGraph(input_path)
     app = RankUI(graph)
     app.root.mainloop()
 

@@ -1,4 +1,0 @@
-- Implement ability to add nodes during runtime
-- Add ability to select file on project start
-- Add name and logo
-- Add image for each game
