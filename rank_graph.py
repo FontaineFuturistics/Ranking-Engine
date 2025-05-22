@@ -36,6 +36,7 @@ class RankGraph:
             for node in self.nodes:
                 for neighbor in data[node.name]:
                     self.add_edge(node, neighbor)
+                    
 
     # Add a node to the graph
     def add_node(self, node: RankNode):
