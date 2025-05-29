@@ -38,8 +38,7 @@
         "Plunder",
         "The Outer Worlds",
         "Lay of the Land",
-        "Coromon",
-        "BattleBit Remastered"
+        "Coromon"
     ],
     "The Last of Us Part II Remastered": [
         "Judas",
@@ -55,8 +54,7 @@
         "Judas",
         "Critter Crosser",
         "The Outer Worlds",
-        "Little Nightmares III",
-        "Tainted Grail: The Fall of Avalon"
+        "Little Nightmares III"
     ],
     "The Outer Worlds": [
         "Judas",
@@ -85,8 +83,7 @@
         "Judas",
         "Critter Crosser",
         "The Last of Us Part II Remastered",
-        "The Walking Dead: Saints & Sinners",
-        "Warhammer 40k: Space Marine 2"
+        "The Walking Dead: Saints & Sinners"
     ],
     "Void Crew": [
         "Judas",
@@ -94,8 +91,7 @@
         "Timberborn",
         "Selaco",
         "Little Nightmares III",
-        "Warhammer 40k: Boltgun",
-        "Tainted Grail: The Fall of Avalon"
+        "Warhammer 40k: Boltgun"
     ],
     "Selaco": [
         "Judas",
@@ -109,8 +105,7 @@
         "Judas",
         "Critter Crosser",
         "Horizon Zero Dawn Remastered",
-        "Life is Strange: Double Exposure",
-        "Vampyr"
+        "Life is Strange: Double Exposure"
     ],
     "Sid Meier's Civilization VII": [
         "Judas",
@@ -122,8 +117,7 @@
     "The Walking Dead: Saints & Sinners": [
         "Judas",
         "Critter Crosser",
-        "Factorio",
-        "Vampyr"
+        "Factorio"
     ],
     "Coromon": [
         "Judas",
@@ -132,8 +126,7 @@
         "Plunder",
         "The Last of Us Part II Remastered",
         "The Elder Scrolls IV: Oblivion Remastered",
-        "Clair Obscur: Expedition 33",
-        "Tainted Grail: The Fall of Avalon"
+        "Clair Obscur: Expedition 33"
     ],
     "Warhammer 40k: Boltgun": [
         "Judas",
@@ -161,9 +154,7 @@
         "Warhammer 40k: Space Marine 2",
         "Warhammer 40k: Boltgun",
         "Little Nightmares III",
-        "The Elder Scrolls IV: Oblivion Remastered",
-        "Timberborn",
-        "Lay of the Land"
+        "The Elder Scrolls IV: Oblivion Remastered"
     ],
     "RailGods of Hysterra": [
         "Judas",
@@ -199,18 +190,5 @@
     "Clair Obscur: Expedition 33": [
         "Judas",
         "The Elder Scrolls IV: Oblivion Remastered"
-    ],
-    "Vampyr": [
-        "Judas",
-        "Clair Obscur: Expedition 33",
-        "Blade and Sorcery",
-        "Plunder",
-        "Ark 2"
-    ],
-    "Tainted Grail: The Fall of Avalon": [
-        "Judas",
-        "The Outer Worlds",
-        "Ark 2",
-        "Critter Crosser"
     ]
 }

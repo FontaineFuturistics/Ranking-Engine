@@ -1,1 +1,3 @@
 - Add image for each game
+- Make it so you can manually create edges, which override existing edges
+- Make it so you can remove nodes
